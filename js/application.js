@@ -22,9 +22,10 @@ UrlParserCtrl.prototype.render = function (parsedUrl) {
   var url = "";
   if (parsedUrl.scheme)
     url += parsedUrl.scheme + ":";
-  if (parsedUrl.username)
-    url += parsedUrl.username + ":" + parsedUrl.password;
   url += "//";
+  if (parsedUrl.username || parsedUrl.password)
+    url += parsedUrl.username + ":" + parsedUrl.password + "@";
+    
   url += parsedUrl.hostname;
   if (parsedUrl.port)
     url += ":" + parsedUrl.port;
