@@ -12,7 +12,6 @@ UrlParserCtrl.prototype.parse = function () {
     hostname: uri.hostname(),
     port: uri.port(),
     path: uri.path(),
-    path: uri.path(),
     query: uri.search(true),
     fragment: uri.fragment(),
   }
@@ -38,6 +37,14 @@ UrlParserCtrl.prototype.render = function (parsedUrl) {
     url += "#" + parsedUrl.fragment;
   return url;
 };
+
+UrlParserCtrl.prototype.removeQueryStringParam = function(key) {
+  delete this.parsedUri.query[key];
+}
+
+UrlParserCtrl.prototype.addQueryStingParam = function(key, value) {
+  this.parsedUri.query[key] = value;
+}
 
 angular
   .module('app', [])
