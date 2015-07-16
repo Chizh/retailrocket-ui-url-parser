@@ -1,0 +1,12 @@
+body {
+	padding-top: 60px;
+}
+
+ul.result {
+	list-style: none;
+		display:inline;
+}
+
+ul.result li {
+	display:inline;
+}
